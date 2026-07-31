@@ -1,0 +1,22 @@
+{
+  "especialidades": [
+    {"id": "deportiva", "name": "Deportiva", "desc": "Lesiones y readaptación"},
+    {"id": "traumato", "name": "Traumatológica", "desc": "Post operatorios, columna"},
+    {"id": "neuro", "name": "Neurológica", "desc": "ACV, equilibrio"},
+    {"id": "suelo", "name": "Suelo pélvico", "desc": "Pre y post parto"},
+    {"id": "general", "name": "General", "desc": "Aún no lo sé"}
+  ],
+  "tiposSesion": {
+    "inicial": {"duracion": 60, "precio": 120},
+    "seguimiento": {"duracion": 45, "precio": 80}
+  },
+  "paquetes": [
+    {"sessions": 5, "price": 360, "save": "10% dcto."},
+    {"sessions": 10, "price": 680, "save": "15% dcto."}
+  ],
+  "pacientes": {
+    "51999999999": {"nombre": "Paciente Demo", "bonos": {"inicial": 0, "seguimiento": 3}}
+  },
+  "citasOcupadas": {},
+  "citas": []
+}
