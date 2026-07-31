@@ -72,6 +72,16 @@ const server = http.createServer(async (req, res) => {
       return send(res, 200, db.getDisponibilidad(fecha));
     }
 
+    // ---- panel de administración ----
+    if (method === 'GET' && pathname === '/api/citas') {
+      const clave = parsed.searchParams.get('clave');
+      const claveEsperada = process.env.ADMIN_KEY || 'gallua2026';
+      if (clave !== claveEsperada) {
+        return send(res, 401, { error: 'Clave incorrecta' });
+      }
+      return send(res, 200, db.getAllCitas());
+    }
+
     // ---- pacientes / bonos ----
     if (method === 'GET' && /^\/api\/pacientes\/[^/]+\/bono$/.test(pathname)) {
       const telefono = decodeURIComponent(pathname.split('/')[3]);
