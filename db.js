@@ -73,6 +73,11 @@ module.exports = {
     return p ? p.bonos : { inicial: 0, seguimiento: 0 };
   },
 
+  getAllCitas() {
+    const data = readDB();
+    return [...data.citas].sort((a, b) => (a.fecha + a.hora).localeCompare(b.fecha + b.hora));
+  },
+
   comprarPaquete(telefono, sessions, nombre) {
     if (!telefono) throw new Error('Falta el teléfono del paciente');
     const data = readDB();
